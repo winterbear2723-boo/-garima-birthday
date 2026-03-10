@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Garima ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background:linear-gradient(120deg,#ffd1dc,#ffe6f0);
+font-family:'Poppins',sans-serif;
+text-align:center;
+}
+
+/* slides */
+
+.slide{
+position:absolute;
+width:100%;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+opacity:0;
+transform:scale(0.9);
+transition:1s;
+padding:40px;
+}
+
+.active{
+opacity:1;
+transform:scale(1);
+}
+
+/* headings */
+
+.glow{
+font-family:'Great Vibes',cursive;
+font-size:80px;
+color:#ff2e88;
+text-shadow:0 0 10px #ff66b3,0 0 20px #ff66b3,0 0 40px #ff99cc;
+}
+
+p{
+font-size:28px;
+max-width:750px;
+color:#5a0033;
+line-height:1.6;
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+/* falling roses */
+
+.rose{
+position:absolute;
+font-size:26px;
+animation:fall 7s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* teddy bounce */
+
+.teddy{
+font-size:90px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+/* gift */
+
+.gift{
+font-size:120px;
+cursor:pointer;
+}
+
+/* photo */
+
+.photo{
+width:300px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+margin:20px;
+}
+
+/* love letter */
+
+.letter{
+font-size:22px;
+width:650px;
+min-height:200px;
+background:#fff9fb;
+border:3px solid #ffb3d9;
+border-radius:25px;
+padding:35px;
+box-shadow:0 10px 30px rgba(255,0,120,0.2);
+color:#5a0033;
+line-height:1.7;
+}
+
+/* night sky */
+
+.night{
+position:absolute;
+width:100%;
+height:100%;
+background:radial-gradient(circle at bottom,#020111 0%,#000000 80%);
+overflow:hidden;
+z-index:0;
+}
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.2;}
+to{opacity:1;}
+}
+
+.shooting-star{
+position:absolute;
+width:120px;
+height:2px;
+background:linear-gradient(90deg,white,transparent);
+animation:shoot 3s linear infinite;
+}
+
+@keyframes shoot{
+0%{transform:translateX(-200px) translateY(-200px) rotate(45deg);}
+100%{transform:translateX(120vw) translateY(120vh) rotate(45deg);opacity:0;}
+}
+
+/* final text */
+
+.stars{
+font-size:60px;
+color:white;
+text-shadow:0 0 10px white,0 0 20px white;
+}
+
+/* final photo */
+
+.final-photo{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid white;
+box-shadow:0 0 25px #fff,0 0 50px #ff66b3;
+position:relative;
+z-index:5;
+margin-top:20px;
+animation:floatPhoto 4s ease-in-out infinite;
+}
+@keyframes floatPhoto{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* hearts forming name */
+
+.name-heart{
+position:absolute;
+font-size:22px;
+transition:2s ease;
+}
+
+</style>
+</head>
+
+<body onclick="nextSlide();heartFirework(event)">
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9e0a7cfd4f.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+
+<div class="slide active">
+<div class="glow">Happy Birthday Garima ❤️</div>
+<p>The most beautiful person in my life was born today.</p>
+<div class="teddy">🧸</div>
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="slide">
+<p>Today is your special day 🎂 and I hope it brings you endless happiness.</p>
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="slide">
+<p>Meeting you was one of the best things that ever happened to me.</p>
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="slide">
+<p>Click the gift 🎁</p>
+<div class="gift" onclick="openGift(event)">🎁</div>
+<p id="giftMessage"></p>
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="slide">
+<p>Some beautiful memories with you 📸</p>
+<img src="us1.jpg.png" class="photo">
+<img src="us2.jpg.png" class="photo">
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="slide">
+<p>You make my world brighter every single day 💖</p>
+<div class="teddy">🧸</div>
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="slide">
+<div class="glow">My Letter For You 💌</div>
+<div class="letter" id="letter"></div>
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="slide">
+<p>No matter where life takes us, I always want you by my side 💞</p>
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="slide">
+<p>I’m really lucky to have you in my life.</p>
+</div>
+
+<script>
+
+/* slide system */
+
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+function nextSlide(){
+
+slides[index].classList.remove("active");
+index++;
+
+if(index>=slides.length){index=0;}
+
+slides[index].classList.add("active");
+
+}
+
+/* floating hearts */
+
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* falling roses */
+
+for(let i=0;i<20;i++){
+
+let rose=document.createElement("div");
+rose.className="rose";
+rose.innerHTML="🌹";
+rose.style.left=Math.random()*100+"%";
+rose.style.animationDuration=(4+Math.random()*5)+"s";
+
+document.body.appendChild(rose);
+
+}
+
+/* gift message */
+
+function openGift(e){
+
+e.stopPropagation();
+
+document.getElementById("giftMessage").innerText =
+"Surprise! My heart belongs to you ❤️";
+
+}
+
+/* typing letter */
+
+let message =
+"Garima, on your birthday I just want to remind you how special you are to me. Every moment with you feels beautiful and every memory we create together means the world to me. You make my life brighter and happier. Happy Birthday my love ❤️";
+
+let i=0;
+
+function typeLetter(){
+
+if(i<message.length){
+
+document.getElementById("letter").innerHTML+=message.charAt(i);
+i++;
+
+setTimeout(typeLetter,40);
+
+}
+
+}
+
+setTimeout(typeLetter,2000);
+
+/* heart fireworks */
+
+function heartFirework(e){
+
+for(let i=0;i<15;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="💖";
+heart.style.position="absolute";
+heart.style.left=e.clientX+"px";
+heart.style.top=e.clientY+"px";
+heart.style.fontSize="25px";
+heart.style.transition="1s";
+
+document.body.appendChild(heart);
+
+let x=(Math.random()-0.5)*300;
+let y=(Math.random()-0.5)*300;
+
+setTimeout(()=>{
+
+heart.style.transform=`translate(${x}px,${y}px)`;
+heart.style.opacity=0;
+
+},10);
+
+setTimeout(()=>heart.remove(),1000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+
